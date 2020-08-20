@@ -2930,7 +2930,7 @@ ${__setProperty(requestpolNumber1,${get_pol_number1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -3252,7 +3252,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4232,7 +4232,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}}</stringProp>
+                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4377,7 +4377,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}}</stringProp>
+                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
