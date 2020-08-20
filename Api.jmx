@@ -215,7 +215,7 @@
             <stringProp name="filename"></stringProp>
           </ResultCollector>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取token" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">true</stringProp>
             <stringProp name="RegexExtractor.refname">gett_picc-m-sid</stringProp>
             <stringProp name="RegexExtractor.regex">picc-m-sid: (.+)</stringProp>
@@ -224,7 +224,7 @@
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="token全局变量" enabled="true">
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters">${gett_picc-m-sid}</stringProp>
             <stringProp name="filename"></stringProp>
@@ -659,7 +659,7 @@ ${__setProperty(requestName,${get_name},)};</stringProp>
             <intProp name="Assertion.test_type">16</intProp>
           </ResponseAssertion>
           <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="正则表达式提取器" enabled="true">
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取token" enabled="true">
             <stringProp name="RegexExtractor.useHeaders">false</stringProp>
             <stringProp name="RegexExtractor.refname">get_token</stringProp>
             <stringProp name="RegexExtractor.regex">&quot;token&quot;:&quot;(.+?)&quot;</stringProp>
@@ -668,13 +668,49 @@ ${__setProperty(requestName,${get_name},)};</stringProp>
             <stringProp name="RegexExtractor.match_number">1</stringProp>
           </RegexExtractor>
           <hashTree/>
-          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell 后置处理程序" enabled="true">
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="token全局变量" enabled="true">
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="parameters">${get_token}</stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="script">String Token=bsh.args[0];
 print(Token);
 ${__setProperty(requestToken,${get_token},)};</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取手机号" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">get_mobile1</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;mobile&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">null</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="手机号全局变量" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${get_mobile1}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String mobile1=bsh.args[0];
+print(mobile1);
+${__setProperty(requestmobile1,${get_mobile1},)};</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取userId" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">get_userId2</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;user_id&quot;:&quot;(.+?)&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">null</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="userId全局变量" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters">${get_userId2}</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">String userId2=bsh.args[0];
+print=(userId2);
+${__setProperty(requestuserId2,${get_userId2},)};</stringProp>
           </BeanShellPostProcessor>
           <hashTree/>
         </hashTree>
@@ -1708,7 +1744,7 @@ ${__setProperty(requestToken,${get_token},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;mobile&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;,&#xd;
 	&quot;business_type&quot;:&quot;claimv2&quot;&#xd;
 	}</stringProp>
@@ -1877,7 +1913,7 @@ ${__setProperty(requestToken,${get_token},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;mobile&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;,&#xd;
 	&quot;business_type&quot;:&quot;claimv2&quot;,&#xd;
 	&quot;code_id&quot;:&quot;${getCodeID}&quot;,&#xd;
@@ -2564,10 +2600,10 @@ ${__setProperty(requestToken,${get_token},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;user_id&quot;:&quot;${__P(requestuserId,)}&quot;,&#xd;
+	&quot;user_id&quot;:&quot;${__P(requestuserId2,)}&quot;,&#xd;
 	&quot;relation_type&quot;:&quot;1,3&quot;,&#xd;
 	&quot;policy_status&quot;:&quot;1&quot;,&#xd;
-	&quot;mobile&quot;:&quot;13142534222&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;&#xd;
 	}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5214,46 +5250,6 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>true</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>true</samplerData>
-            <xml>true</xml>
-            <fieldNames>true</fieldNames>
-            <responseHeaders>true</responseHeaders>
-            <requestHeaders>true</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <sentBytes>true</sentBytes>
-            <url>true</url>
-            <fileName>true</fileName>
-            <hostname>true</hostname>
-            <threadCounts>true</threadCounts>
-            <sampleCount>true</sampleCount>
-            <idleTime>true</idleTime>
-            <connectTime>true</connectTime>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
-      <hashTree/>
     </hashTree>
   </hashTree>
 </jmeterTestPlan>
