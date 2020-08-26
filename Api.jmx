@@ -28,10 +28,20 @@
             <stringProp name="Argument.value">18958317444</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
+          <elementProp name="phone_code" elementType="Argument">
+            <stringProp name="Argument.name">phone_code</stringProp>
+            <stringProp name="Argument.value">081508</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="service_code" elementType="Argument">
+            <stringProp name="Argument.name">service_code</stringProp>
+            <stringProp name="Argument.value">FKXT11002020317</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
         </collectionProp>
       </Arguments>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="密码登录159、138" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="密码登录159、138" enabled="false">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -307,7 +317,7 @@ ${__setProperty(requestName,${get_name},)};</stringProp>
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="验证码登录" enabled="false">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="验证码登录" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -491,7 +501,7 @@ ${__setProperty(requestName,${get_name},)};</stringProp>
                 <stringProp name="Argument.value">{&#xd;
     &quot;use_type&quot;: &quot;userlogin&quot;,&#xd;
     &quot;user_name&quot;: &quot;${Phone}&quot;,&#xd;
-    &quot;phone_code&quot;: &quot;081508&quot;,&#xd;
+    &quot;phone_code&quot;: &quot;${phone_code}&quot;,&#xd;
     &quot;login_device&quot;: &quot;OXF-AN00 HONOR&quot;,&#xd;
     &quot;login_time&quot;: &quot;2020-08-14   04:08:08&quot;&#xd;
 }</stringProp>
@@ -814,7 +824,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -980,7 +990,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -1154,7 +1164,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -1313,7 +1323,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -1490,7 +1500,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -1708,7 +1718,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1770,7 +1780,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;mobile&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;,&#xd;
 	&quot;business_type&quot;:&quot;claimv2&quot;&#xd;
 	}</stringProp>
@@ -1877,7 +1887,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -1939,7 +1949,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;mobile&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;,&#xd;
 	&quot;business_type&quot;:&quot;claimv2&quot;,&#xd;
 	&quot;code_id&quot;:&quot;${getCodeID}&quot;,&#xd;
@@ -2048,7 +2058,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2214,7 +2224,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2373,7 +2383,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2548,7 +2558,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2626,10 +2636,10 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-	&quot;user_id&quot;:&quot;${__P(requestuserId,)}&quot;,&#xd;
+	&quot;user_id&quot;:&quot;${__P(requestuserId2,)}&quot;,&#xd;
 	&quot;relation_type&quot;:&quot;1,3&quot;,&#xd;
 	&quot;policy_status&quot;:&quot;1&quot;,&#xd;
-	&quot;mobile&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;mobile&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;platform&quot;:&quot;8&quot;&#xd;
 	}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -2731,7 +2741,7 @@ ${__setProperty(requestName1,${get_name1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -2916,7 +2926,7 @@ ${__setProperty(requestpolNumber1,${get_pol_number1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -3055,7 +3065,7 @@ ${__setProperty(requestpolNumber1,${get_pol_number1},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -3238,7 +3248,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -3412,7 +3422,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -3626,7 +3636,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -3678,7 +3688,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;service_code&quot;:&quot;FKXT11002020317&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;service_code&quot;:&quot;${service_code}&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -3778,7 +3788,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -3932,7 +3942,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -4062,7 +4072,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4218,7 +4228,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4363,7 +4373,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4517,7 +4527,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4685,7 +4695,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4850,7 +4860,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -4950,10 +4960,10 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
 	&quot;platform&quot;:&quot;8&quot;,&#xd;
 	&quot;r&quot;:&quot;16&quot;,&#xd;
 	&quot;policy_code&quot;:&quot;110016931886008&quot;,&#xd;
-	&quot;applicant_name&quot;:&quot;${__P(requestName,)}&quot;,&#xd;
+	&quot;applicant_name&quot;:&quot;${__P(requestName1,)}&quot;,&#xd;
 	&quot;certi_type&quot;:&quot;1&quot;,&#xd;
-	&quot;certi_code&quot;:&quot;${__P(requestCerti,)}&quot;,&#xd;
-	&quot;change_tel&quot;:&quot;${__P(requestmobile,)}&quot;,&#xd;
+	&quot;certi_code&quot;:&quot;${__P(requestCerti1,)}&quot;,&#xd;
+	&quot;change_tel&quot;:&quot;${__P(requestmobile1,)}&quot;,&#xd;
 	&quot;note_service&quot;:&quot;1&quot;&#xd;
 	}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -5011,7 +5021,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
@@ -5175,7 +5185,7 @@ ${__setProperty(requestpolNumber,${get_pol_number},)};</stringProp>
               </elementProp>
               <elementProp name="picc-m-sid" elementType="Header">
                 <stringProp name="Header.name">picc-m-sid</stringProp>
-                <stringProp name="Header.value">${__P(requestSession,)}</stringProp>
+                <stringProp name="Header.value">${__P(requestToken,)}</stringProp>
               </elementProp>
               <elementProp name="platform" elementType="Header">
                 <stringProp name="Header.name">platform</stringProp>
